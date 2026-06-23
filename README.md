@@ -66,7 +66,7 @@ Each component has a single responsibility to keep the codebase easy to understa
 
 ### 1. Clone the Repository
 
-git clone <your-repository-url>  
+git clone <https://github.com/Priyadharsh1ni/studio-bookings.git>  
 cd konnect-studio-bookings
 
 ---
