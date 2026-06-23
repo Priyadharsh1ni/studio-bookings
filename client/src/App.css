@@ -1,0 +1,174 @@
+body {
+  background: radial-gradient(circle at top, #1e293b, #020617);
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+}
+
+.container {
+  max-width: 980px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.01)
+  );
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+}
+
+
+button {
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f97316, #f97316);
+  color: #020617;
+  box-shadow: var(--shadow-sm);
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background: #334155;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+input, select {
+  background: #020617;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  color: var(--text);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.Confirmed {
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
+  border: 1px solid rgba(34,197,94,0.3);
+}
+
+.Pending {
+  background: rgba(249,115,22,0.15);
+  color: #cd9579;
+  border: 1px solid rgba(249,115,22,0.3);
+}
+
+.Cancelled {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+  border: 1px solid rgba(239,68,68,0.3);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: rgba(255,255,255,0.04);
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+td {
+  padding: 14px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.bonus {
+  border-left: 4px solid var(--primary);
+}
+
+.bonus h2 {
+  color: #cd9579;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--muted);
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.error{
+  color: var(--danger);
+  font-size: 14px;
+}
+
+.filter-select {
+  background: #020617;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  display: flex;
+  color: var(--text);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.date-picker {
+  color-scheme: dark;
+}
+
+.date-picker::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.8;
+  color-scheme: white;
+}
+
+.date-picker::-webkit-datetime-edit {
+  text-transform: uppercase;
+  color-scheme: dark;
+}
+
+.calendly-inline-widget {
+  margin-top: 20px;
+  border: none;
+  width: 100%;
+  height: 900px;
+}

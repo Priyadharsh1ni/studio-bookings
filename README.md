@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# KonnectStudios – Studio Bookings App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built as part of the KonnectStudios Full Stack Developer take-home assignment.  
+The focus of this implementation is clear structure, basic UI clarity, and attention to detail rather than advanced backend features or heavy visual polish.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+### Core Requirements
+- Display a list of studio bookings
+- Visually distinguish booking status (confirmed / pending / cancelled)
+- Filter bookings by status
+- Add a new booking using a form
+- Form validation:
+  - All fields are required
+  - Date cannot be in the past
+- Empty state shown when no bookings match a filter
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Bonus (Optional)
+- Live scheduling embed using Calendly / Cal.com
+- Client-side embed only (no backend or API keys)
+- Bonus section is clearly separated from the booking list
+- Embedded bookings are not synced with the booking list
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Frontend: React (Vite)
+- Backend: Node.js + Express
+- Styling: Plain CSS (no UI libraries)
+- Data Source: Local JSON file (no database)
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+konnect-studio-bookings/
+│
+├── server/
+│   ├── index.js
+│   ├── router/
+│   │   └── bookings.js
+│   └── data/
+│       └── bookings.json
+│
+├── client/
+│   └── src/
+│       ├── components/
+│       │   ├── BookingList.jsx
+│       │   ├── BookingForm.jsx
+│       │   ├── Filter.jsx
+│       │   └── CalendlyEmbed.jsx
+│       ├── App.jsx
+│       ├── main.jsx
+│       └── index.css
+│
+└── README.md
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Each component has a single responsibility to keep the codebase easy to understand and maintain.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## How to Run Locally
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone <your-repository-url>  
+cd konnect-studio-bookings
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 2. Start the Backend Server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd server  
+npm install  
+npm start  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The backend will run at:  
+http://localhost:5000
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 3. Start the Frontend
 
-### Analyzing the Bundle Size
+cd client  
+npm install  
+npm run dev  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The application will be available at:  
+http://localhost:3000
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Design Approach
 
-### Advanced Configuration
+- Focused on clear visual hierarchy and readability
+- Used a card-based layout to group related content
+- Consistent spacing, alignment, and typography throughout the UI
+- Booking status is visually represented using color-coded badges
+- Edge cases such as empty results and validation errors are handled
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+No external UI libraries were used to keep the solution simple and transparent.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Bonus: Live Scheduling Embed
 
-### `npm run build` fails to minify
+As a stretch goal, a live scheduling section was added using Calendly 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Allows users to book an actual time slot
+- Implemented as a client-side embed only
+- No backend logic or API keys involved
+- Bookings from the scheduler are not synced with the booking list
+- Clearly labeled and separated from the core functionality
+
+Time spent on bonus: approximately 15–20 minutes.
+
+---
+
+## Notes & Assumptions
+
+- Newly added bookings are stored in client-side state and do not persist on page refresh
+- Persistence was intentionally avoided, as it was not part of the evaluation criteria
+- The project prioritizes clarity, structure, and consistency over advanced features
+
+---
