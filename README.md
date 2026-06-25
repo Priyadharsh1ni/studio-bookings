@@ -35,8 +35,7 @@ The focus of this implementation is clear structure, basic UI clarity, and atten
 ---
 
 ## Project Structure
-
-konnect-studio-bookings/
+studio-bookings/
 │
 ├── server/
 │   ├── index.js
